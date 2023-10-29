@@ -33,6 +33,22 @@ def generate_key(rsa_public_key: bytes):
     return ciphertext, encrypt_cipher
 
 
+def dec_to_bytes(number: int, byte_amount: int) -> bytes:
+    return hex_to_bytes(hex(number), byte_amount)
+
+
+def hex_to_bytes(hex_string: str, byte_amount: int) -> bytes:
+    hex_digits = byte_amount * 2
+    if hex_string.startswith("0x"):
+        hex_string = hex_string[2:]
+
+    temp_len = hex_digits - len(hex_string)
+    if temp_len < 0:
+        raise Exception("Given hex string requires more bytes than the given amount")
+    else:
+        return bytes.fromhex(("0" * temp_len) + hex_string)
+
+
 def connect_to_db():
     pass
 

@@ -1,12 +1,21 @@
 from enum import Enum
 from dataclasses import dataclass
 
+"""
+?: boolean
+h: short
+l: long
+i: int
+f: float
+q: long long int
+"""
+
 
 @dataclass
 class ClientRequest:
     client_id: str
     version: int
-    code: int
+    code: "RequestCodes"
     payload_size: int
     payload: bytes
 

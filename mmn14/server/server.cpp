@@ -19,14 +19,13 @@ void handleClientRequest(tcp::socket s)
             std::cerr << err.str() << std::endl;
         }
     }
-    catch (std::exception& e)
+    catch (std::exception &e)
     {
         std::cerr << "Exception in thread: " << e.what() << "\n";
     }
 }
 
-
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     /*
      * Create a thread for each connection received.
@@ -42,7 +41,7 @@ int main(int argc, char* argv[])
             std::cout << "Received Connection" << std::endl;
         }
     }
-    catch (std::exception& e)
+    catch (std::exception &e)
     {
         std::cerr << "Exception: " << e.what() << std::endl;
     }

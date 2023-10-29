@@ -5,7 +5,7 @@ import struct
 
 from typing import List, Tuple
 
-from mmn14.client.constants import (
+from constants import (
     EStatus,
     EOp,
     MAX_NAME_LEN,
